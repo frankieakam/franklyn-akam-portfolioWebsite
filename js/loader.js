@@ -3,70 +3,50 @@ function initLoader() {
     const loadingText = document.querySelector(".loading-text");
     const loader = document.querySelector(".loader");
     const experience = document.querySelector(".experience");
-    const loadingSound = document.getElementById("loading-sound");
     const bgMusic = document.getElementById("bg-music");
-    const bgVideo = document.getElementById("bg-video"); // get video element
-    const startBtn = document.getElementById("start-btn"); // get start btn
+    const bgVideo = document.getElementById("bg-video");
+    const startBtn = document.getElementById("start-btn");
 
     // Ensure elements exist
-    if (!loadingText || !loader || !experience || !loadingSound || !bgMusic) {
+    if (!loadingText || !loader || !experience || !bgMusic) {
         console.error("Essential DOM elements are missing.");
         return;
     }
 
-    // pause bg music and video initially
+    // Pause bg music and video initially
     bgMusic.pause();
     bgMusic.currentTime = 0;
     if (bgVideo) {
         bgVideo.pause();
-        bgVideo.currentTime = 0; // reset video to start position
-    }
-
-    loadingSound.volume = 0.5; // Set a lower volume for better user experience
-
-    // Autoplay handling
-    const playLoadingSound = () => {
-        loadingSound.play().then(() => {
-            console.log("Loading sound started successfully.");
-        }).catch(() => {
-            console.warn("Loading sound autoplay was blocked.");
-        });
-    };
-
-    if (startBtn) {
-        startBtn.addEventListener("click", playLoadingSound);
-    } else {
-        playLoadingSound();
+        bgVideo.currentTime = 0; // Reset video to start position
     }
 
     const updateLoadingProgress = () => {
         if (percent < 100) {
-            percent += (100 / (0.34 * 60)); // progress in 0.34s
+            percent += (100 / (5 * 60)); // Progress in 0.34s
             requestAnimationFrame(updateLoadingProgress);
         } else {
-            loadingSound.onended = () => {
-                loader.style.transition = "opacity 0.5s ease-in-out";
-                loader.style.opacity = "0";
-                setTimeout(() => {
-                    loader.style.display = "none";
-                    experience.classList.remove("hidden");
-                    experience.style.transition = "opacity 0.5s ease-in-out";
-                    experience.style.opacity = "1";
-                }, 500);
-            };
+            loader.style.transition = "opacity 0.5s ease-in-out";
+            loader.style.opacity = "0";
+            setTimeout(() => {
+                loader.style.display = "none";
+                experience.classList.remove("hidden");
+                experience.style.transition = "opacity 0.5s ease-in-out";
+                experience.style.opacity = "1";
+            }, 500);
         }
     };
 
     requestAnimationFrame(updateLoadingProgress);
 
-    // ensure bg video plays when start btn is clicked
+    // Ensure bg video plays when start btn is clicked
     if (startBtn) {
         startBtn.addEventListener("click", () => {
             if (bgVideo) {
                 console.log("Start button clicked, playing video...");
                 bgVideo.play().then(() => {
                     console.log("Background video started playing.");
-                    bgVideo.loop = true; // ensures continuous looping
+                    bgVideo.loop = true; // Ensures continuous looping
                 }).catch((error) => {
                     console.error("Video playback failed:", error);
                 });
@@ -74,3 +54,5 @@ function initLoader() {
         });
     }
 }
+
+document.addEventListener("DOMContentLoaded", initLoader);

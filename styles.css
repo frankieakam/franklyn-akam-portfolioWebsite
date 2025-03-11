@@ -73,23 +73,6 @@ span {
     justify-content: center;
 }
 
-.title {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-@media (max-width: 600px) {
-    .title {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 800px) {
-    .title {
-        font-size: 20px;
-    }
-}
-
 .rotator-container {
     width: 100px;
     height: 100px;
@@ -131,6 +114,7 @@ span {
     height: 100%;
     border-radius: 100%;
     animation: rotate 5s linear infinite;
+    margin-top: 150px;
 }
 
 @media (max-width: 600px) {
@@ -155,33 +139,6 @@ span {
     to {
         transform: rotate(360deg);
     }
-}
-
-.loading-text {
-    margin-top: 20px;
-    font-size: 10px;
-    font-style: italic;
-    animation: loadingBlink 1s infinite alternate;
-    color: lightblue;
-}
-
-@media (max-width: 600px) {
-    .loading-text {
-        font-size: 8px;
-    }
-}
-
-@media (max-width: 800px) {
-    .loading-text {
-        font-size: 8px;
-    }
-}
-
-/* blink keyframes for loading text */
-@keyframes loadingBlink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
 }
 
 .experience {
@@ -226,6 +183,66 @@ span {
     background-repeat: no-repeat;
     cursor: none;
 }
+
+.title {
+    font-size: 30px;
+    margin-top: -150px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 800px) {
+    .title {
+        font-size: 20px;
+    }
+}
+
+.loading-text {
+    margin-top: 20px;
+    font-size: 15px;
+    font-style: italic;
+    animation: loadingBlink 1.5s infinite alternate;
+    color: lightblue;
+}
+
+@media (max-width: 400px) {
+    .loading-text {
+        font-size: 8px;
+    }
+}
+@media (max-width: 600px) {
+    .loading-text {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    .loading-text {
+        font-size: 12px;
+    }
+}
+
+/* blink keyframes for loading text */
+@keyframes loadingBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+
 
 /* start btn to welcome section */
 .start-btn {
