@@ -14,8 +14,8 @@ It features an interactive user experience with animations, dynamic transitions,
 
 ## Technologies Used
 - **HTML**
-- **CSS** (including animations and transitions)
-- **JavaScript** (for interactivity and event handling)
+- **CSS**
+- **JavaScript** 
 
 ## Current Limitations
 - **Mobile Responsiveness**: The website partially renders on mobile devices,
