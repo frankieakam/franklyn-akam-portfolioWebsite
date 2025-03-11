@@ -8,6 +8,12 @@ function initLoader() {
     const bgVideo = document.getElementById("bg-video"); // get video element
     const startBtn = document.getElementById("start-btn"); // get start btn
 
+    // Ensure elements exist
+    if (!loadingText || !loader || !experience || !loadingSound || !bgMusic) {
+        console.error("Essential DOM elements are missing.");
+        return;
+    }
+
     // pause bg music and video initially
     bgMusic.pause();
     bgMusic.currentTime = 0;
@@ -16,29 +22,28 @@ function initLoader() {
         bgVideo.currentTime = 0; // reset video to start position
     }
 
-    loadingSound.volume = 1;
+    loadingSound.volume = 0.5; // Set a lower volume for better user experience
 
     // Autoplay handling
-    if (startBtn) {
-        startBtn.addEventListener("click", () => {
-            loadingSound.play().then(() => {
-                console.log("Loading sound started successfully.");
-            }).catch(() => {
-                console.warn("Loading sound autoplay was blocked.");
-            });
-        });
-    } else {
-        // play sound immediately if no start button is present
-        loadingSound.play().catch(() => {
+    const playLoadingSound = () => {
+        loadingSound.play().then(() => {
+            console.log("Loading sound started successfully.");
+        }).catch(() => {
             console.warn("Loading sound autoplay was blocked.");
         });
+    };
+
+    if (startBtn) {
+        startBtn.addEventListener("click", playLoadingSound);
+    } else {
+        playLoadingSound();
     }
 
-    const interval = setInterval(() => {
+    const updateLoadingProgress = () => {
         if (percent < 100) {
             percent += (100 / (0.34 * 60)); // progress in 0.34s
+            requestAnimationFrame(updateLoadingProgress);
         } else {
-            clearInterval(interval);
             loadingSound.onended = () => {
                 loader.style.transition = "opacity 0.5s ease-in-out";
                 loader.style.opacity = "0";
@@ -50,7 +55,9 @@ function initLoader() {
                 }, 500);
             };
         }
-    }, 17);
+    };
+
+    requestAnimationFrame(updateLoadingProgress);
 
     // ensure bg video plays when start btn is clicked
     if (startBtn) {
