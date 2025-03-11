@@ -23,7 +23,7 @@ function initLoader() {
 
     const updateLoadingProgress = () => {
         if (percent < 100) {
-            percent += (100 / (5 * 60)); // Progress in 0.34s
+            percent += (100 / (0.34 * 60)); // Progress in 0.34s
             requestAnimationFrame(updateLoadingProgress);
         } else {
             loader.style.transition = "opacity 0.5s ease-in-out";
