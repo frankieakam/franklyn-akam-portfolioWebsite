@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Franklyn Akam">
+        <meta name="description" content="Web Developer, Front-End Web Developer">
+        <meta name="keywords" content="Franklyn Akam, Web Developer, Front-End Web Developer">
+        <meta property="og:title" content="Franklyn Akam - Portfolio Website">
+        <meta property="og:description" content="Web Developer, Front-End Web Developer">
+        <title>Franklyn Akam - Portfolio Website</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Audiowide&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    </head>
+
+    <body> 
+        <video id="bg-video" muted> 
+            <source src="videos/rocket-bg-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="loader">
+            <h1 class="title">you're <span>backkkkkkk!!!</span> 😎🤓 <br />  
+                call me <span>Frankie</span> — your dev navigator 🛰️ <br />  
+                system primed? <span>LAUNCH! 🚀</span> 
+            </h1>
+                
+            <div class="rotator-container">
+                <img src="images/rotator-removebg-preview.png" alt="Logo" class="rotator">
+            </div>
+
+            <p class="loading-text">be nice to the stars</p>
+            <audio id="loading-sound" autoplay src="sounds/rocket-launch-sound.mp3"></audio>
+        </div>
+        
+        <div class="experience hidden">
+            <!-- about image -->
+            <div>
+                <img src="images/frankie-removebg-preview.png" alt="My Image" class="about-image">
+            </div>
+
+            <button class="start-btn"></button>
+            
+            <audio id="bg-music" loop>
+                <source src="audios/bg-music.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="main-content hidden">
+            <!-- welcome section -->
+            <section id="welcome-section">
+                <div class="welcome-section">
+                    <div class="welcome-sectionh1-p">
+                        <h1 class="typing-effect">
+                            <span>Hey see who's here!</span> you're meeting Franklyn Akam
+                        </h1>
+        
+                        <p class="typing-effect-p">
+                            I'mma <span>Front-End Web Developer</span>
+                        </p>
+                        
+                        <p class="typing-effect-p">
+                            I'm currently focused on web development
+                        </p>
+
+                        <p class="typing-effect-p">
+                            building innovative tools and applications
+                        </p>
+
+                        <p class="typing-effect-p">
+                            that solve real-world problems
+                        </p>
+                    </div>
+                </div>
+
+                <button class="navigate-btn-access" onclick="navigateTo('about')"></button>
+            </section>
+
+            <!-- about me section -->
+            <section id="about-section" class="hidden">
+                <h2 class="typing-effect">ENGAGED! <span style="color: lightblue; font-size: 35px;">you're welcome</span>
+                </h2>
+                
+                <button class="navigate-btn-projects" onclick="navigateTo('projects')"></button>
+            </section>
+
+            <!-- projects section -->
+            <section id="projects-section" class="hidden">
+                <h2 class="typing-effect">
+                    <span style="color: lightblue;">Frankie</span> has been <span style="color: #ffc107;">WORKING</span> and <span style="color: lightblue;">LEARNING</span>
+                </h2>
+
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="project-card" onclick="openProject('https://shoeroombyasap.netlify.app/')">
+                            <div class="project-card-inner">
+
+                                <div class="project-card-front">
+                                    <img src="images/shoeroomByAsap-capture.PNG" alt="Shoeroom by Asap Footwears">
+                                </div>
+
+                                <div class="project-card-back">
+                                    <h3>Shoeroom by Asap Footwears</h3>
+
+                                    <div>
+                                        <img src="images/html5-logo-removebg-preview.png" alt="HTML5 Logo">
+    
+                                        <img src="images/css3-logo-removebg-preview.png" alt="CSS3 Logo">
+    
+                                        <img src="images/js-logo-removebg-preview.png" alt="JavaScript Logo">
+                                    </div>
+
+                                    <p class="typing-effect-p">handcrafted footwears ordering website</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="project-card" onclick="openProject('https://github.com/frankieakam')">
+                            <div class="project-card-inner">
+
+                                <div class="project-card-front">
+                                    <img src="images/meristemClone-capture.PNG" alt="Meristem website clone">
+                                </div>
+
+                                <div class="project-card-back">
+                                    <h3>Meristem Real Estate Website Clone</h3>
+                                    
+                                    <div>
+                                        <img src="images/react-logo-removebg-preview.png" alt="React.js Logo">
+                                    </div>
+                                    
+                                    <p class="typing-effect-p">cloned by Frankie only for demonstration purpose</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="project-card" onclick="openProject('https://github.com/frankieakam')">
+                            <div class="project-card-inner">
+
+                                <div class="project-card-front">
+                                    <img src="images/wessaPharmClone-capture.PNG" alt="WessaPharm website clone">
+                                </div>
+
+                                <div class="project-card-back">
+                                    <h3>WessaPharm Website Clone</h3>
+
+                                    <div>
+                                        <img src="images/react-logo-removebg-preview.png" alt="React.js Logo">
+                                    </div>
+
+                                    <p class="typing-effect-p">cloned by Frankie only for demonstration purpose</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="project-card" onclick="openProject('https://shareaverse.netlify.app/')">
+                            <div class="project-card-inner">
+
+                                <div class="project-card-front">
+                                    <img src="images/verse-capture.PNG" alt="Share a verse">
+                                </div>
+
+                                <div class="project-card-back">
+                                    <h3>Verse</h3>
+
+                                    <div>
+                                        <img src="images/html5-logo-removebg-preview.png" alt="HTML5 Logo">
+    
+                                        <img src="images/css3-logo-removebg-preview.png" alt="CSS3 Logo">
+    
+                                        <img src="images/js-logo-removebg-preview.png" alt="JavaScript Logo">
+                                    </div>
+
+                                    <p class="typing-effect-p">
+                                        verse is a user-friendly platform to share your thoughts on various topics
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="project-card" onclick="openProject('https://frankieakam.github.io/kikiPlay/')">
+                            <div class="project-card-inner">
+
+                                <div class="project-card-front">
+                                    <img src="images/kikiPlay-capture.PNG" alt="Game store website">
+                                </div>
+
+                                <div class="project-card-back">
+                                    <h3>Game Store Website</h3>
+
+                                    <div>
+                                        <img src="images/html5-logo-removebg-preview.png" alt="HTML5 Logo">
+                                        <img src="images/css3-logo-removebg-preview.png" alt="CSS3 Logo">
+                                        <img src="images/js-logo-removebg-preview.png" alt="JavaScript Logo">
+                                    </div>
+
+                                    <p class="typing-effect-p">
+                                        developed by Frankie for individual demonstration purpose
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card" onclick="openProject('https://github.com/frankieakam/the-horizon-platform/')">
+                            <div class="project-card-inner">
+
+                                <div class="project-card-front">
+                                    <img src="images/the-horizon-platform-capture.PNG" alt="The Horizon Platform">
+                                </div>
+
+                                <div class="project-card-back">
+                                    <h3>The Horizon Platform</h3>
+
+                                    <div>
+                                        <img src="images/react-logo-removebg-preview.png" alt="React Logo">
+                                    </div>
+
+                                    <p class="typing-effect-p">
+                                        The Horizon Platform is a demonstrated web application project developed by a three-man team
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card" onclick="openProject('https://github.com/frankieakam/editora/')">
+                            <div class="project-card-inner">
+
+                                <div class="project-card-front">
+                                    <img src="images/editora-capture.PNG" alt="Editora Notepad">
+                                </div>
+
+                                <div class="project-card-back">
+                                    <h3>Editora</h3>
+
+                                    <div>
+                                        <img src="images/c-logo-removebg-preview.png" alt="C Logo">
+                                    </div>
+
+                                    <p class="typing-effect-p">Editora is a text editor operating as a .exe file. Future updates will introduce a GUI</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="navigate-btn-tech" onclick="navigateTo('technologies')"></button>
+            </section>
+
+            <!-- technologies section -->
+            <section id="technologies-section" class="hidden">
+                <h2 class="typing-effect">Technologies</h2>
+
+                <div class="technologies">
+                    <img src="images/html5-logo-removebg-preview.png" alt="HTML5" onclick="openProject('https://developer.mozilla.org/en-US/docs/Web/HTML/')">
+
+                    <img src="images/css3-logo-removebg-preview.png" alt="CSS3" onclick="openProject('https://developer.mozilla.org/en-US/docs/Web/CSS/')">
+
+                    <img src="images/sass-logo-removebg-preview.png" alt="SCSS" onclick="openProject('https://sass-lang.com/')">
+
+                    <img src="images/js-logo-removebg-preview.png" alt="JavaScript" onclick="openProject('https://developer.mozilla.org/en-US/docs/Web/JavaScript/')">
+
+                    <img src="images/react-logo-removebg-preview.png" alt="React.js" onclick="openProject('https://react.dev/')">
+
+                    <img src="images/github-logo-removebg-preview.png" alt="Github Logo" onclick="openProject('https://github.com/')">
+                </div>
+
+                <button class="navigate-btn-contact" onclick="navigateTo('contact')"></button>
+            </section>
+
+            <!-- contact section -->
+            <section id="contact-section" class="hidden">
+                <h2 class="typing-effect">Contact</h2>
+
+                <ul class="contact">
+                    <li>
+                        <a href="https://x.com/frankie_akam" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="https://linkedin.com/in/franklynakam" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/frankieakam" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="resume.html" target="_blank"><i class="fa-solid fa-user-tie"></i></a>
+                    </li>
+                </ul>
+
+                <button class="exit-btn" onclick="exitExperience()"></button>
+            </section>
+        </div>
+
+        <!-- holographic pointer cursor -->
+        <img src="images/holographic-pointer-removebg-preview.png" id="holographic-pointer" alt="Holographic Pointer">
+    
+        <!-- external js -->
+        <script src="js/main.js"></script>
+        <script src="js/loader.js"></script>
+        <script src="js/typingEffect.js"></script>
+        <script src="js/carousel.js"></script>
+        <script src="js/pointer.js"></script>
+        <script src="js/intersectionObserver.js"></script>
+        <script src="js/navigation.js"></script>
+    </body>
+</html>

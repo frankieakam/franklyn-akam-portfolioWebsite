@@ -1,0 +1,149 @@
+body {
+    background: url(images/beautiful-shining-stars-night-sky.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Audiowide", sans-serif;
+    color: white;
+    justify-items: center;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.solar-system-animation {
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.earth {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    background: url('images/earth-removebg-preview.png') no-repeat center;
+    background-size: contain;
+}
+
+.moon {
+    position: absolute;
+    border-style: solid;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 150.5s linear infinite;
+}
+
+/* keyframes for moon orbit animation */
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.moon::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    background: url('images/moon-removebg-preview.png') no-repeat center;
+    background-size: contain;
+    box-shadow: 0 0 2em gray;
+    background-color: black;
+}
+
+.sun {
+    position: absolute;
+    top: 0;
+    right: -25em;
+    width: 0;
+    height: 0;
+}
+
+@media (max-width: 600px) {
+    .sun {
+        right: 2em;
+        top: -10em;
+    }
+}
+
+@media (max-width: 800px) {
+    .sun {
+        right: 2em;
+        top: -10em;
+    }
+}
+
+.sun::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    width: 8em;
+    height: 8em;
+    background: url('images/sun-removebg-preview.png') no-repeat center;
+    background-size: contain;
+    box-shadow: 0 0 8em yellow;
+    background-color: white;
+}
+
+@media (max-width: 600px) {
+    .sun::before {
+        box-shadow: 0 0 8em yellow;
+    }
+}
+
+@media (max-width: 800px) {
+    .sun::before {
+        box-shadow: 0 0 8em yellow;
+    }
+}
+
+.file {
+    margin: 10px 0 0 0;
+}
+
+@media (max-width: 600px) {
+    .file {
+        margin: 550px 0 0 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .file {
+        margin: 550px 0 0 0;
+    }
+}
+
+.file a {
+    margin: 0 120px;
+}
+
+.file img {
+    margin: 20px 0;
+    width: 50px;
+}
+
+.file p {
+    font-size: 12px;
+    text-align: center;
+    margin-top: -20px;
+}
+
+
+
+
+
