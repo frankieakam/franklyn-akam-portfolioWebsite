@@ -27,6 +27,11 @@ function initLoader() {
                 console.warn("Loading sound autoplay was blocked.");
             });
         });
+    } else {
+        // play sound immediately if no start button is present
+        loadingSound.play().catch(() => {
+            console.warn("Loading sound autoplay was blocked.");
+        });
     }
 
     const interval = setInterval(() => {
