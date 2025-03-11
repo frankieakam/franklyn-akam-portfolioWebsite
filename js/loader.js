@@ -94,7 +94,7 @@ function initLoader() {
     const interval = setInterval(() => {
         if (percent < 100) {
             percent += (100 / (0.34 * 60)); // progress in 0.34s
-            loadingText.textContent = `be nice to the stars`; // update loading text
+            loadingText.textContent = `be nice to the stars`; 
         } else {
             clearInterval(interval);
             loadingSound.onended = () => {
