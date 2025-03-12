@@ -5,12 +5,26 @@ function initCarousel() {
     let slideInterval;
     let isHovered = false;
 
+    function getVisibleCards() {
+        const trackWidth = document.querySelector('.carousel').offsetWidth;
+        const cardWidth = projectCards[0].offsetWidth + 40; // add gap
+        return Math.floor(trackWidth / cardWidth);
+    }
+
     function startSlide() {
         if (!isHovered) {
             slideInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % projectCards.length;
-                carouselTrack.style.transform = `translateX(-${currentIndex * (projectCards[0].offsetWidth + 20)}px)`;
-            }, 10000);
+                let visibleCards = getVisibleCards();
+                let maxIndex = projectCards.length - visibleCards;
+
+                if (currentIndex >= maxIndex) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex++;
+                }
+
+                carouselTrack.style.transform = `translateX(-${currentIndex * (projectCards[0].offsetWidth + 40)}px)`;
+            }, 5000);
         }
     }
 
@@ -22,8 +36,15 @@ function initCarousel() {
         isHovered = true;
         stopSlide();
     });
+
     carouselTrack.addEventListener("mouseleave", () => {
         isHovered = false;
+        startSlide();
+    });
+
+    window.addEventListener("resize", () => {
+        stopSlide();
+        currentIndex = 0; // reset position on resize
         startSlide();
     });
 
