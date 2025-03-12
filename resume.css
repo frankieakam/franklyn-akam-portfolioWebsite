@@ -10,12 +10,6 @@ body {
     height: 100vh;
     overflow: hidden;
 }
-@media (max-width: 600px) {
-    body {
-        height: 110vh;
-
-    }
-}
 
 .solar-system-animation {
     font-size: 10px;
